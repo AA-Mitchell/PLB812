@@ -1,14 +1,21 @@
-Methods:
 
 SRA files: 
 
-After locating the appropriate accession files in NCBI (SRR5448235 SRR5448234 SRR5448232 SRR5448233 SRR5448230 SRR5448231 SRR5448229 SRR5448228 
-SRR5448226 SRR5448227 SRR5448225 SRR5448223 SRR5448224) I used the prefetch command to download all SRR files into their self-named
+SRR5448235 SRR5448234 SRR5448232 SRR5448233 SRR5448230 SRR5448231 SRR5448229 SRR5448228 
+SRR5448226 SRR5448227 SRR5448225 SRR5448223 SRR5448224
+
+After locating the appropriate accession files in NCBI I used the prefetch command to download all SRR files into their self-named
 directories. From there, I made two new directories "Solanum/RNA_Seq" and moved all into 'RNA_Seq/' before using the fastq-dump command and gzip/split-3
 options to convert the .sra files to .fastq.gz format. I initially tried doing this all in a single loop as shown in the lecture slides, but
 I couldn't get it to perform and ended up executing each step individually.
 
 Genomic files: 
+
+Stuberosum_686_v6.1.annotation_info.txt           Stuberosum_686_v6.1.gene_exons.gff3                   Stuberosum_686_v6.1.repeatmasked_assembly_v6.1.gff3
+Stuberosum_686_v6.1.cds.fa                        Stuberosum_686_v6.1.gene.gff3                         Stuberosum_686_v6.1.softmasked.fa
+Stuberosum_686_v6.1.cds_primaryTranscriptOnly.fa  Stuberosum_686_v6.1.hardmasked.fa                     Stuberosum_686_v6.1.transcript.fa
+Stuberosum_686_v6.1.defline.txt                   Stuberosum_686_v6.1.protein.fa                        Stuberosum_686_v6.1.transcript_primaryTranscriptOnly.fa
+Stuberosum_686_v6.1.fa                            Stuberosum_686_v6.1.protein_primaryTranscriptOnly.fa
 
 I found the v.6 Solanum tuberosum genome data on Phytozome and downloaded all zipped files to a folder on my PC. From there I navigated to the download location
 (Desktop) within a local unix terminal before logging into the sftp tool. After logging in I used the 'put' command to transfer the files into the home directory on the 
