@@ -22,4 +22,12 @@ I found the v.6 Solanum tuberosum genome data on Phytozome and downloaded all zi
 hpcc cluster terminal. Within the hpcc terminal I then unzipped all files using the "gzip" command and decompress "--d" option. I could have done all of this at once, 
 but again decided to do it one file at a time instead (still getting used to all this).
 
+Lab 2 methods:
+
+I downloaded fastqc using 'wget' and unzipped with the 'unzip' command. I then altered the permission of all files with chmod a+x *
+This allowed me to use the fastqc command.
+
+For the shell script, I kept it simple by telling the fastqc command to convert all .fastq files within the directory where I kept my RNA Seq files. 
+I had fastqc return all .html files to a seperate directory named 'FastQC_output' within the RNA_Seq directory. 
+
 -Drew M 
