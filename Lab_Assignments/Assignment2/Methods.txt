@@ -1,0 +1,8 @@
+Methods: Assignment2
+
+Started by downloading the FastQC files with 'wget', then unzipped with 'unzip' command and moved everythig into the bin directory within the plb812 environment.
+
+I had to change the file permissions using the 'chmod a+x' command. This let me run the fastqc command.
+
+From there I made a super simple shell script that converted all fastqc files within my RNA_Seq directory and sent them to the FastQC_output directory that I made
+within the RNA_Seq directory. I didn't use a list or a loop, just the wildcard *.fastqc tool.
