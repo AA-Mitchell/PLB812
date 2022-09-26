@@ -3,7 +3,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
-#SBATCH --mem=10
+#SBATCH --mem=100GB
 #SBATCH --job-name download_sra
 #SBATCH --output=%x-%j.SLURMout
 
