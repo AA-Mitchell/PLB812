@@ -1,4 +1,4 @@
-Methods:
+Methods: Not accurate, opened .html files and they were blank!! Will update when resolved
 
 
 For this one I used a list and a "For" loop that initially defined all the .fastq files to be trimmed/run through fastqc. I then referenced this list within
