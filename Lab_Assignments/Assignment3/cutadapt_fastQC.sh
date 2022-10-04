@@ -14,7 +14,7 @@ export LD_LIBRARY_PATH="${HOME}/miniconda3/envs/plb812/lib:${LD_LIBRARY_PATH}"
 
 fastq="SRR5448223 SRR5448224 SRR5448225 SRR5448226 SRR5448227 SRR5448228 SRR5448229 SRR5448230 SRR5448231 SRR5448232 SRR5448233 SRR5448234 SRR5448235"
 
-#fastq2="SRR5448223_2.fastq SRR5448224_2.fastq SRR5448225_2.fastq SRR5448226_2.fastq SRR5448227_2.fastq SRR5448228_2.fastq SRR5448229_2.fastq SRR5448230_2.fastq SRR5448231_2.fastq SRR5448232_2.fastq SRR5448233_2.fastq SRR5448234_2.fastq SRR5448235_2.fastq"
+###fastq2="SRR5448223_2.fastq SRR5448224_2.fastq SRR5448225_2.fastq SRR5448226_2.fastq SRR5448227_2.fastq SRR5448228_2.fastq SRR5448229_2.fastq SRR5448230_2.fastq SRR5448231_2.fastq SRR5448232_2.fastq SRR5448233_2.fastq SRR5448234_2.fastq SRR5448235_2.fastq"
 
 for i in ${fastq}
 
@@ -24,7 +24,7 @@ for i in ${fastq}
 
 do
 
-#java -jar trimmomatic-0.40.jar PE ${i}_1.fastq.gz ${i}_2.fastq.gz ${i}_1.fastq.gz.paired.trimmed ${i}_1.fastq.gz.unpaired.trimmed ${i}_2.fastq.gz.paired.trimmed ${i}_2.fastq.gz.unpaired.trimmed ILLUMINACLIP:TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:75
+###java -jar trimmomatic-0.40.jar PE ${i}_1.fastq.gz ${i}_2.fastq.gz ${i}_1.fastq.gz.paired.trimmed ${i}_1.fastq.gz.unpaired.trimmed ${i}_2.fastq.gz.paired.trimmed ${i}_2.fastq.gz.unpaired.trimmed ILLUMINACLIP:TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:75
 
 cutadapt -j 10 -g TACACTCTTTCCCTACACGACGCTCTTCCGATCT -a GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT -q 10 -m 50 -o ${i}_1.fastq.trimmed -p ${i}_2.fastq.trimmed ${i}_1.fastq ${i}_2.fastq
 
