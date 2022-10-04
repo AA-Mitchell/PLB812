@@ -1,14 +1,10 @@
-Methods: Not accurate, opened .html files and they were blank!! Will update when resolved
-
+Methods:
 
 For this one I used a list and a "For" loop that initially defined all the .fastq files to be trimmed/run through fastqc. I then referenced this list within
-the input line of cutadapt. It was important to include the --interleaved option as my data is paired-end. This took some reading to solve.
+the input line of cutadapt. The tricky part was loading paired end reads appropriately, though this was solved by creating a simple list of SRR accession names
+without formatting, then passing the variable ${i} to cutadapt and including the distinction of either _1.fastq or _2.fastq
 
-Anyway, I used the mv command to send all trimmed fastq files from cutadapt to a seperate directory "trimmed_fastq_files" 
+I linked the output of cutadapt to the mv command to send all trimmed fastq files to a seperate directory "trimmed_fastq_files" 
 I then had fastqc run all files within this newly created directory and output the resultant .html files to another directory "trimmed_fastqc_files"
 
 I used 'cp' to copy these .html files to my github repository under Assignment3 and pushed them to github
-
-I want to mention that my initial .fastq files looked really nice to begin with, showing no adapter sequences and a constant read length of 100bp.
-I guess these may have already been run through a QC protocol? Anyway, my fastqc .html files look identical (more or less) before and afer running cutadapt, 
-even after plating around with some of the parameters.
