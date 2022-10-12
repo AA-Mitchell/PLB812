@@ -9,6 +9,7 @@ I did have to do some trouble shooting though. The memory capacity for genome in
 For alignment I chose to output BAM files directly using the --outSAMtype  option.
 
 To pass my accessions to STAR I used a list of accession IDs and the variables ${i}_1.fastq and ${i}_2.fastq to load in paired end reads from the list.
+I calculated read data unsing the count files output from STAR, not shown in shell script, had to run htseq-count first.
 
 
 
