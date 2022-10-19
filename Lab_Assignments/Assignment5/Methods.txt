@@ -22,21 +22,22 @@ colnames(12): SRR5448223 SRR5448224 ... SRR5448234
   SRR5448235
 colData names(1): Time
 
-
-####Wald Test - pretty straightforward, had to run estimateDispersions before it would let me run Wald
-
-> dds <- DESeq2::estimateDispersions(dds)
-> dds <- DESeq2::nbinomWaldTest(dds)
-
-
 #####Normalization of Read Data: Not sure if this actually normalizes anything or simply reads out size variation??
 
 > dds <- DESeq2::estimateSizeFactors(dds)
 > dds$sizeFactor
 SRR5448223 SRR5448224 SRR5448225 SRR5448226 SRR5448227 SRR5448228 
- 0.6980685  0.7313350  1.6029423  0.7349820  0.7378916  1.5670270 
-SRR5448229 SRR5448230 SRR5448232 SRR5448233 SRR5448234 SRR5448235 
- 1.5988042  0.8680745  0.8438694  0.8706196  1.5646711  1.3808322 
+ 0.5719200  0.5710344  1.4992355  0.6644506  0.6672038  1.8157832 
+SRR5448229 SRR5448230 SRR5448231 SRR5448232 SRR5448233 SRR5448234 
+ 1.8382006  0.9128465  0.9110775  0.8482776  0.8451560  1.7064777 
+SRR5448235 
+ 1.4662961
+
+####Wald Test - pretty straightforward, had to run estimateDispersions before it would let me run Wald
+
+> dds <- DESeq2::estimateDispersions(dds)
+> dds <- DESeq2::nbinomWaldTest(dds)
+ 
 
 #####Called Expression Levels for t0-t10 samples:
 
@@ -49,8 +50,8 @@ SRR5448229 SRR5448230 SRR5448232 SRR5448233 SRR5448234 SRR5448235
 
 resultsTable <- DESeq2::results(dds, contrast=c("Time","t0", "t10"))
 
-   nrow(na.omit(resultsTable,resultsTable$padj < 0.05,))
-   [1] 3730
+   > nrow(na.omit(resutsTable,resutsTable$padj < 0.05,))
+[1] 19395
 
 ####Maplot. easy enough, plot looks a little funky, though this could just be my inexperience with these. Went with t0 control vs t10 drought condition
 
