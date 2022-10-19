@@ -3,6 +3,8 @@ I used htseq count files for DESeq.My paired-end data was reverse standed, so I 
 I transfered the counts to a directory in my local machine and fed DESeq this directory along with the SampleSheetI made manually in Notebook. 
 The conditions for my data sets were 0,6,and 10 days of drought.
 
+dds <- DESeq2::DESeqDataSetFromHTSeqCount(sampleTable= SampleSheet, directory= "~/R/plb812/RNA_Seq_counts/", design= ~ Time)
+
 This whole process took me forever and it's easier to show my code than try to explain how I stumbled through it all.
 
 ######DESeq2 output:
@@ -35,6 +37,13 @@ SRR5448223 SRR5448224 SRR5448225 SRR5448226 SRR5448227 SRR5448228
  0.6980685  0.7313350  1.6029423  0.7349820  0.7378916  1.5670270 
 SRR5448229 SRR5448230 SRR5448232 SRR5448233 SRR5448234 SRR5448235 
  1.5988042  0.8680745  0.8438694  0.8706196  1.5646711  1.3808322 
+
+#####Called Expression Levels for t0-t10 samples:
+
+ > DESeq2::resultsNames(dds2)
+[1] "Intercept"      "Time_t10_vs_t0" "Time_t6_vs_t0" 
+> de <- DESeq2::results(object = dds2, name = "Time_t10_vs_t0")
+
 
 ######Identification of Differentially Expressed Genes: Code in the lecture slides was broken, took me 100 years to figure out the formatting....
 
