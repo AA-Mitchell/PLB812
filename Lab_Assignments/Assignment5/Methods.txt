@@ -36,7 +36,7 @@ SRR5448223 SRR5448224 SRR5448225 SRR5448226 SRR5448227 SRR5448228
 SRR5448229 SRR5448230 SRR5448232 SRR5448233 SRR5448234 SRR5448235 
  1.5988042  0.8680745  0.8438694  0.8706196  1.5646711  1.3808322 
 
-######Identification of Differentially Expressed Genes: Code in the lecture slides was broken, took me 100 years to figure our the formatting....
+######Identification of Differentially Expressed Genes: Code in the lecture slides was broken, took me 100 years to figure out the formatting....
 
 resultsTable <- DESeq2::results(dds, contrast=c("Time","t0", "t10"))
 
