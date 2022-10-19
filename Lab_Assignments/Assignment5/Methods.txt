@@ -1,28 +1,19 @@
 
-I used htseq count files for DESeq.My paired-end data was forward standed, so I went with the default option in htseq. 
+I used htseq count files for DESeq. My paired-end data was forward standed, so I went with the default option in htseq. 
+
 I transfered the counts to a directory in my local machine and fed DESeq this directory along with the SampleSheetI made manually in Notebook. 
-The conditions for my data sets were 0,6,and 10 days of drought.
+I used rowSums and counts to filter all rows with less than 10 reads
+Did a normalization with estimatesizefactors, then estimatedispersions, then ran a Waldtest
+
+The conditions for my data sets were 0,6,and 10 days of drought. I only used 0 and 10 days.
+
+Total differentially expressed genes after filtering for >10 = 3857
+
+#####DESeq Input:
 
 dds <- DESeq2::DESeqDataSetFromHTSeqCount(sampleTable= SampleSheet, directory= "~/R/plb812/RNA_Seq_counts/", design= ~ Time)
 
-This whole process took me forever and it's easier to show my code than try to explain how I stumbled through it all.
-
-######DESeq2 output:
-
-dds
-class: DESeqDataSet 
-dim: 19982 12 
-metadata(1): version
-assays(1): counts
-rownames(19982): Soltu.DM.01G000010.v6.1
-  Soltu.DM.01G000030.v6.1 ... Soltu.DM.S002220.v6.1
-  Soltu.DM.S002420.v6.1
-rowData names(0):
-colnames(12): SRR5448223 SRR5448224 ... SRR5448234
-  SRR5448235
-colData names(1): Time
-
-#####Normalization of Read Data: Not sure if this actually normalizes anything or simply reads out size variation??
+#####Normalization of Read Data:
 
 > dds <- DESeq2::estimateSizeFactors(dds)
 > dds$sizeFactor
@@ -51,7 +42,7 @@ SRR5448235
 resultsTable <- DESeq2::results(dds, contrast=c("Time","t0", "t10"))
 
    > nrow(na.omit(resutsTable,resutsTable$padj < 0.05,))
-[1] 3745
+[1] 3857
 
 ####Maplot. easy enough, plot looks a little funky, though this could just be my inexperience with these. Went with t0 control vs t10 drought condition
 
