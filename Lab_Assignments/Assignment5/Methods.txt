@@ -51,7 +51,7 @@ SRR5448235
 resultsTable <- DESeq2::results(dds, contrast=c("Time","t0", "t10"))
 
    > nrow(na.omit(resutsTable,resutsTable$padj < 0.05,))
-[1] 19395
+[1] 3745
 
 ####Maplot. easy enough, plot looks a little funky, though this could just be my inexperience with these. Went with t0 control vs t10 drought condition
 
