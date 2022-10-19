@@ -1,5 +1,5 @@
 
-I used htseq count files for DESeq.My paired-end data was reverse standed, so I went with the -s rrevers option in htseq. 
+I used htseq count files for DESeq.My paired-end data was forward standed, so I went with the default option in htseq. 
 I transfered the counts to a directory in my local machine and fed DESeq this directory along with the SampleSheetI made manually in Notebook. 
 The conditions for my data sets were 0,6,and 10 days of drought.
 
