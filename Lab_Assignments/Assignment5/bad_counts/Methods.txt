@@ -1,0 +1,59 @@
+
+I used htseq count files for DESeq.My paired-end data was forward standed, so I went with the default option in htseq. 
+I transfered the counts to a directory in my local machine and fed DESeq this directory along with the SampleSheetI made manually in Notebook. 
+The conditions for my data sets were 0,6,and 10 days of drought.
+
+dds <- DESeq2::DESeqDataSetFromHTSeqCount(sampleTable= SampleSheet, directory= "~/R/plb812/RNA_Seq_counts/", design= ~ Time)
+
+This whole process took me forever and it's easier to show my code than try to explain how I stumbled through it all.
+
+######DESeq2 output:
+
+dds
+class: DESeqDataSet 
+dim: 19982 12 
+metadata(1): version
+assays(1): counts
+rownames(19982): Soltu.DM.01G000010.v6.1
+  Soltu.DM.01G000030.v6.1 ... Soltu.DM.S002220.v6.1
+  Soltu.DM.S002420.v6.1
+rowData names(0):
+colnames(12): SRR5448223 SRR5448224 ... SRR5448234
+  SRR5448235
+colData names(1): Time
+
+#####Normalization of Read Data: Not sure if this actually normalizes anything or simply reads out size variation??
+
+> dds <- DESeq2::estimateSizeFactors(dds)
+> dds$sizeFactor
+SRR5448223 SRR5448224 SRR5448225 SRR5448226 SRR5448227 SRR5448228 
+ 0.5719200  0.5710344  1.4992355  0.6644506  0.6672038  1.8157832 
+SRR5448229 SRR5448230 SRR5448231 SRR5448232 SRR5448233 SRR5448234 
+ 1.8382006  0.9128465  0.9110775  0.8482776  0.8451560  1.7064777 
+SRR5448235 
+ 1.4662961
+
+####Wald Test - pretty straightforward, had to run estimateDispersions before it would let me run Wald
+
+> dds <- DESeq2::estimateDispersions(dds)
+> dds <- DESeq2::nbinomWaldTest(dds)
+ 
+
+#####Called Expression Levels for t0-t10 samples:
+
+ > DESeq2::resultsNames(dds2)
+[1] "Intercept"      "Time_t10_vs_t0" "Time_t6_vs_t0" 
+> de <- DESeq2::results(object = dds2, name = "Time_t10_vs_t0")
+
+
+######Identification of Differentially Expressed Genes: Code in the lecture slides was broken, took me 100 years to figure out the formatting....
+
+resultsTable <- DESeq2::results(dds, contrast=c("Time","t0", "t10"))
+
+   > nrow(na.omit(resutsTable,resutsTable$padj < 0.05,))
+[1] 19395
+
+####Maplot. easy enough, plot looks a little funky, though this could just be my inexperience with these. Went with t0 control vs t10 drought condition
+
+DESeq2::plotMA(results(dds, contrast=c("Time","t0","t10")), ylim=c(-2,2))
+
