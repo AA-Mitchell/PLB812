@@ -1,0 +1,49 @@
+
+I used htseq count files for DESeq.My paired-end data was standed, so I went with the default setting in htseq. 
+I transfered the counts to a directory in my local machine and fed DESeq this directory along with the SampleSheetI made manually in Notebook. 
+The conditions for my data sets were 0,6,and 10 days of drought.
+
+This whole process took me forever and it's easier to show my code than try to explain how I stumbled through it all.
+
+######DESeq2 output:
+
+dds
+class: DESeqDataSet 
+dim: 19982 12 
+metadata(1): version
+assays(1): counts
+rownames(19982): Soltu.DM.01G000010.v6.1
+  Soltu.DM.01G000030.v6.1 ... Soltu.DM.S002220.v6.1
+  Soltu.DM.S002420.v6.1
+rowData names(0):
+colnames(12): SRR5448223 SRR5448224 ... SRR5448234
+  SRR5448235
+colData names(1): Time
+
+
+####Wald Test - pretty straightforward, had to run estimateDispersions before it would let me run Wald
+
+> dds <- DESeq2::estimateDispersions(dds)
+> dds <- DESeq2::nbinomWaldTest(dds)
+
+
+#####Normalization of Read Data: Not sure if this actually normalizes anything or simply reads out size variation??
+
+> dds <- DESeq2::estimateSizeFactors(dds)
+> dds$sizeFactor
+SRR5448223 SRR5448224 SRR5448225 SRR5448226 SRR5448227 SRR5448228 
+ 0.6980685  0.7313350  1.6029423  0.7349820  0.7378916  1.5670270 
+SRR5448229 SRR5448230 SRR5448232 SRR5448233 SRR5448234 SRR5448235 
+ 1.5988042  0.8680745  0.8438694  0.8706196  1.5646711  1.3808322 
+
+######Identification of Differentially Expressed Genes: Code in the lecture slides was broken, took me 100 years to figure our the formatting....
+
+resultsTable <- DESeq2::results(dds, contrast=c("Time","t0", "t10"))
+
+   nrow(na.omit(resultsTable,resultsTable$padj < 0.05,))
+   [1] 3730
+
+####Maplot. easy enough, plot looks a little funky, though this could just be my inexperience with these. Went with t0 control vs t10 drought condition
+
+DESeq2::plotMA(results(dds, contrast=c("Time","t0","t10")), ylim=c(-2,2))
+
