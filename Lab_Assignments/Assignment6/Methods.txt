@@ -6,6 +6,8 @@ Had to make a table of dds results which contrasted t0 and t10 conditions before
 created the upGenes object, setting logfold2 change to >= 1 (same thing for down genes though with sign reversed)
 
 fed the Genes list into topGO for BP,CC, and MF. Repeated this for downGenes as well.
+*should note that my up/down geneslists returned identical GO terms for each run, though the individual terms are different. I suspect something is amiss with this, but
+I'm unsure what.
 
 Exported these tables as .tsv files.
 
