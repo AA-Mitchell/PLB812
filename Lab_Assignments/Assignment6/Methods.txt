@@ -1,0 +1,13 @@
+
+Started by downloading the annotation file from phytozome. Used this to generate the topGO.tsv file needed for enrichment testing with 'readMappings'
+
+Had to make a table of dds results which contrasted t0 and t10 conditions before proceeding to topGO
+
+created the upGenes object, setting logfold2 change to >= 1 (same thing for down genes though with sign reversed)
+
+fed the Genes list into topGO for BP,CC, and MF. Repeated this for downGenes as well.
+
+Exported these tables as .tsv files.
+
+Had to correct my initial genes list to correct for mismatches in naming between it and my Goterms.
+

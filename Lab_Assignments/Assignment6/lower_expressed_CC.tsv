@@ -1,0 +1,76 @@
+GO.ID	Term	Annotated	Significant	Expected	Fisher	fdr
+GO:0043231	intracellular membrane-bounded organelle	45	11	7.14	0.014	0.525
+GO:0043227	membrane-bounded organelle	45	11	7.14	0.014	0.525
+GO:0012505	endomembrane system	16	6	2.54	0.026	0.5785714285714285
+GO:0005783	endoplasmic reticulum	12	5	1.9	0.044	0.5785714285714285
+GO:0031224	intrinsic component of membrane	38	10	6.03	0.050	0.5785714285714285
+GO:0031984	organelle subcompartment	6	3	0.95	0.053	0.5785714285714285
+GO:0016020	membrane	103	21	16.35	0.054	0.5785714285714285
+GO:0043229	intracellular organelle	64	11	10.16	0.083	0.7781250000000001
+GO:0042175	nuclear outer membrane-endoplasmic retic...	6	3	0.95	0.111	0.925
+GO:0031226	intrinsic component of plasma membrane	3	2	0.48	0.130	0.9750000000000001
+GO:0005789	endoplasmic reticulum membrane	6	3	0.95	0.176	1
+GO:0031975	envelope	12	3	1.9	0.298	1
+GO:0031090	organelle membrane	18	5	2.86	0.305	1
+GO:0031967	organelle envelope	12	3	1.9	0.337	1
+GO:0005737	cytoplasm	49	9	7.78	0.378	1
+GO:0031974	membrane-enclosed lumen	3	1	0.48	0.410	1
+GO:0140513	nuclear protein-containing complex	5	1	0.79	0.424	1
+GO:0070013	intracellular organelle lumen	3	1	0.48	0.438	1
+GO:0043233	organelle lumen	3	1	0.48	0.438	1
+GO:0043226	organelle	64	11	10.16	0.455	1
+GO:0099023	vesicle tethering complex	8	1	1.27	0.477	1
+GO:0005739	mitochondrion	8	2	1.27	0.478	1
+GO:0071944	cell periphery	16	3	2.54	0.491	1
+GO:0005886	plasma membrane	8	2	1.27	0.497	1
+GO:0019867	outer membrane	3	1	0.48	0.499	1
+GO:0098827	endoplasmic reticulum subcompartment	6	3	0.95	0.500	1
+GO:0005643	nuclear pore	3	1	0.48	0.500	1
+GO:0031981	nuclear lumen	3	1	0.48	0.530	1
+GO:0005694	chromosome	12	1	1.9	0.571	1
+GO:0031301	integral component of organelle membrane	3	1	0.48	0.578	1
+GO:0031300	intrinsic component of organelle membran...	3	1	0.48	0.618	1
+GO:0110165	cellular anatomical entity	187	30	29.68	0.707	1
+GO:0005635	nuclear envelope	4	1	0.63	0.751	1
+GO:0005740	mitochondrial envelope	8	2	1.27	0.764	1
+GO:0031966	mitochondrial membrane	8	2	1.27	0.775	1
+GO:0005634	nucleus	19	4	3.02	0.788	1
+GO:0005938	cell cortex	8	1	1.27	0.842	1
+GO:0098588	bounding membrane of organelle	5	1	0.79	0.850	1
+GO:0009579	thylakoid	14	1	2.22	0.870	1
+GO:0019866	organelle inner membrane	6	1	0.95	0.908	1
+GO:0005622	intracellular anatomical structure	110	14	17.46	0.953	1
+GO:0005743	mitochondrial inner membrane	6	1	0.95	0.964	1
+GO:0043232	intracellular non-membrane-bounded organ...	21	1	3.33	0.992	1
+GO:0043228	non-membrane-bounded organelle	21	1	3.33	0.992	1
+GO:0032991	protein-containing complex	55	4	8.73	0.993	1
+GO:0098796	membrane protein complex	23	1	3.65	0.993	1
+GO:0005575	cellular_component	189	30	30	1.000	1
+GO:0016021	integral component of membrane	37	9	5.87	1.000	1
+GO:0000145	exocyst	8	1	1.27	1.000	1
+GO:0000148	1,3-beta-D-glucan synthase complex	3	0	0.48	1.000	1
+GO:0000785	chromatin	10	0	1.59	1.000	1
+GO:0000786	nucleosome	9	0	1.43	1.000	1
+GO:0000930	gamma-tubulin complex	3	0	0.48	1.000	1
+GO:0005576	extracellular region	5	0	0.79	1.000	1
+GO:0005753	mitochondrial proton-transporting ATP sy...	3	0	0.48	1.000	1
+GO:0005777	peroxisome	4	0	0.63	1.000	1
+GO:0005815	microtubule organizing center	3	0	0.48	1.000	1
+GO:0005856	cytoskeleton	7	0	1.11	1.000	1
+GO:0005875	microtubule associated complex	3	0	0.48	1.000	1
+GO:0009521	photosystem	13	0	2.06	1.000	1
+GO:0009522	photosystem I	9	0	1.43	1.000	1
+GO:0009523	photosystem II	4	0	0.63	1.000	1
+GO:0015630	microtubule cytoskeleton	6	0	0.95	1.000	1
+GO:0016469	proton-transporting two-sector ATPase co...	4	0	0.63	1.000	1
+GO:0032993	protein-DNA complex	9	0	1.43	1.000	1
+GO:0034357	photosynthetic membrane	13	0	2.06	1.000	1
+GO:0042579	microbody	4	0	0.63	1.000	1
+GO:0044815	DNA packaging complex	9	0	1.43	1.000	1
+GO:0045259	proton-transporting ATP synthase complex	3	0	0.48	1.000	1
+GO:0098797	plasma membrane protein complex	3	0	0.48	1.000	1
+GO:0098798	mitochondrial protein-containing complex	5	0	0.79	1.000	1
+GO:0098800	inner mitochondrial membrane protein com...	5	0	0.79	1.000	1
+GO:0140535	intracellular protein-containing complex	3	0	0.48	1.000	1
+GO:1902494	catalytic complex	9	0	1.43	1.000	1
+GO:1990234	transferase complex	4	0	0.63	1.000	1
