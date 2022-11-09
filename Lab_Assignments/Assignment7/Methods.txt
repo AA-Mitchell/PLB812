@@ -1,0 +1,8 @@
+
+Ran the standard FastQC workflow. Saw some pretty low quality reads, though no adapter sequences.
+Cleaned up the reads with cutadapt and fed the results directly into FastQC again. Results looked much nicer. (quality threshold set to 20)
+
+used bwa mem to generate the bwa alignment index using the A.thaliana genome v11 from phytozome. This took many hours to run.
+
+converted the bwa output to a sorted .bam file using samtools sort. Fed this directly into samtools flagstat with output option set to tsv.
+Renamed the slurmount results file.
