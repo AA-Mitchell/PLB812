@@ -1,0 +1,13 @@
+Used picard MarkDuplicates and AddOrReplaceReadGroups commands to generate the required files for gatk. This was quick and painless. 
+
+**Arguments for Add/Replace: RGID=1 RGLB=lib1 RGPL=ILLUMIA RGPU=NA RGSM=WS2
+
+The tricky part of this lab one was discovering that gatk needed index files for both the reference fasta and the sorted.bam inputs. 
+  I ended up making these with the samtools index and faidx commands. Not complicated once I identified the problem gatk was having
+  
+**Arguments for gatk: -ERC GVCF
+  
+  I then fed gatk the proper input files with the index files in place and let it do it's thing. Pretty straightforward. 
+  Had to alter my .sh file such that the gatk env was referenced.
+ 
+  
