@@ -1,0 +1,8 @@
+
+
+Orthofinder was simple to use, just fed it the directory with my .fa files and it handled the rest. Download and installation was done through conda. Scipy was a dependency I also 
+had to download via conda prior to use.
+
+My results appear sound, with ~1700 orthogroups identified between the three species, though the gene ID cited in the github file did not return any results when grepped. This was odd.
+
+
