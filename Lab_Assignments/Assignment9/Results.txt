@@ -5,19 +5,6 @@ Results from line count of orthofinder output .tsv
 (plb812) wc -l < N0.tsv
 17413
 
+(base) grep AT5G13930 N0.tsv
+N0.HOG0012418   OG0011800       -       AT5G13930.1     evm_27.model.AmTr_v1.0_scaffold00039.31 LOC_Os11g32650.1
 
-For the AT4G28490 gene grep returned nothing. I tried another gene ID and identified several orthogroups, so my orthofinder results appear to be sound. 
-
-I then systematically searched using syncopated inputs of the original gene ID. This returned orthogroups at input AT4G284. (no results for AT4G2849 or AT4G28490)
-
-Returned gene IDs from grep AT4G2849:
-
-AT4G28440.1, AT1G23750.1        evm_27.model.AmTr_v1.0_scaffold00058.163        LOC_Os01g13700.1, LOC_Os05g15520.1, LOC_Os01g55030.1
-N0.HOG0003668   OG0003092       n0      AT2G20560.1, AT4G28480.1        evm_27.model.AmTr_v1.0_scaffold00058.85 LOC_Os02g20394.1, LOC_Os05g48810.1
-N0.HOG0003820   OG0003241       n0      AT2G20580.1, AT4G28470.1        evm_27.model.AmTr_v1.0_scaffold00006.121, evm_27.model.AmTr_v1.0_scaffold00057.266      LOC_Os02g05340.1
-N0.HOG0004052   OG0003465       n0      AT5G46090.1, AT4G18425.1, AT4G28485.2   evm_27.model.AmTr_v1.0_scaffold00058.90 LOC_Os05g48840.1
-N0.HOG0005265   OG0004650       n0      AT4G28430.1, AT2G20590.1        evm_27.model.AmTr_v1.0_scaffold00021.189        LOC_Os02g19990.1
-N0.HOG0005417   OG0004802       n0      AT2G20610.1, AT4G28420.2, AT4G28410.1, AT2G24850.1
-N0.HOG0005593   OG0004978       n0      AT4G28400.1, AT2G20630.2        evm_27.model.AmTr_v1.0_scaffold00183.21 LOC_Os07g32380.1
-N0.HOG0009652   OG0009034       -       AT4G28450.1     evm_27.model.AmTr_v1.0_scaffold00002.192        LOC_Os01g13730.1
-N0.HOG0014329   OG0013711       -       AT4G28405.1
